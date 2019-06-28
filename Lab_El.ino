@@ -59,7 +59,7 @@ String fracasso[MAXMSG]={"Não foi fácil,\nmas você fracassou novamente!",
 
 //-------------------------------------------------------------------------------------------------------------
 
-//Função de conectara WiFi
+//Função de conectar na  rede WiFi
 void InitWiFi();
 //Função que seleciona uma frase desmotivacional aleatória
 String get_frase();
@@ -88,16 +88,21 @@ void setup(){
 //-------------------------------------------------------------------------------------------------------------
 
 void loop(){
+  //Numero de novas mensagens des de a ultima leitura
   int numNewMessages = LE_bot.getUpdates(LE_bot.last_message_received + 1);
+  //Itera pelo vetor contendo os objetos das novas mensagens
   for(int i=0; i<numNewMessages; i++){
-     String comando = LE_bot.messages[i].text;
+      //Salva o texto da mensagem
+    String comando = LE_bot.messages[i].text;  
+    //Compara o texto com as opções
     if(comando.equalsIgnoreCase("/start")){
 
       String menu = "Conexão Estabelecida\nLiga LED N - Liga o led de níumero N (1 a 3)\nDesliga LED N - Desliga o LED de número N(1 a 3)\nAbre porta - Abre a porta acionando um servo\nFecha porta - Fecha a porta acionando um servo\nAjuda - Envia uma frase desmotivacional";
+      //Envia uma resposta para o ID que enviou a mensagem
       LE_bot.sendMessage(String(LE_bot.messages[i].chat_id), menu);
    
     }else if(comando.equalsIgnoreCase("Liga LED 1")){
-     
+      
       digitalWrite(LED_1, HIGH);
       LE_bot.sendMessage(String(LE_bot.messages[i].chat_id), "LED 1 Ligado!");
    
