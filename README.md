@@ -3,7 +3,7 @@ Projeto do Laboratório de Eletrônica 2019/1
 
 ## Descrição
 
-Dispositivo de automação residencial utilizando a ESP32 Development Board que realiza o acionamento de LEDs (simulado luminárias) e 
+Dispositivo de automação residencial utilizando a placa NodeMCU ESP32 que realiza o acionamento de LEDs (simulado luminárias) e 
 um servo (simulando uma fechadura eletrônica) através de mensagens enviandas para um Bot do Telegram.
 
 ## Como criar o Bot no Telegram
@@ -25,5 +25,9 @@ um servo (simulando uma fechadura eletrônica) através de mensagens enviandas p
 4-Com o Bot criado um Token será fornecido, esse Token é utilizado para conectar a ESP32 ao Bot:
 
 ![](https://github.com/gustavobartho/Automacao_Residencial_Telegram_Bot/blob/master/Imagens/img_4.png "")
+
+## Circuito
+
+![](https://github.com/gustavobartho/Automacao_Residencial_Telegram_Bot/blob/master/Imagens/Circuito.png "Circuito ESP32")
 
 
